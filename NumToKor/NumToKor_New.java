@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class NumToKor {
+class NumToKor_New {
     public static void main(String[] args) {
         // 사용자 0~99 정수 입력
         // 한글표기식 출력
