@@ -3,28 +3,28 @@ import java.util.Scanner;
 class NumToKor_New {
     public static void main(String[] args) {
         // 사용자 0~99 정수 입력
-        // 한글표기식 출력
+        // 한글 표기식 출력
         Scanner scanner = new Scanner(System.in);
-        System.out.println("0~99 사이의 숫자를 입력하세요");
+        System.out.println("0 ~ 99 사이의 숫자를 입력하세요");
         int num = scanner.nextInt();
-        String StrNum = "영일이삼사오육칠팔구", fowardtot = "", backtot = "";
+        String strnum = "영일이삼사오육칠팔구", fwrdtot = "", backtot = "";
 
-        int forwardnum, backnum;
+        int fwrdnum, backnum;
 
         if (num >= 100 || num < 0) {
             System.out.println("잘못된 값입니다.");
             return;
         }
 
-        forwardnum = num / 10;
+        fwrdnum = num / 10;
         backnum = num % 10;
 
-        fowardtot = StrNum.substring(forwardnum, forwardnum + 1);
-        backtot = StrNum.substring(backnum, backnum + 1);
-        if (forwardnum == 1) {
+        fwrdtot = strnum.substring(fwrdnum, fwrdnum + 1);
+        backtot = strnum.substring(backnum, backnum + 1);
+        if (fwrdnum == 1) {
             System.out.println("십" + backtot);
-        } else if (forwardnum != 0) {
-            System.out.println(fowardtot + "십" + backtot);
+        } else if (fwrdnum != 0) {
+            System.out.println(fwrdtot + "십" + backtot);
         } else
             System.out.println(backtot);
     }
