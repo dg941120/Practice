@@ -1,6 +1,6 @@
 /* 사용자 입력값 이름, 생월, 생일 받아서 별자리를 판별 후 출력.
-* ex) 이름을 입력하세요 -> 몇월달에 태어났나요 -> 몇일에 태어났나요 -> XXX님의 별자리는 XX자리입니다.
-* 일찍 끝날경우 pdf 선택문 제어문 */
+ * ex) 이름을 입력하세요 -> 몇월달에 태어났나요 -> 몇일에 태어났나요 -> XXX님의 별자리는 XX자리입니다.
+ * 일찍 끝날경우 pdf 선택문 제어문 */
 /*
 물병자리
 1월 20일 ~ 2월 18일
@@ -41,102 +41,121 @@ class Constellation {
         int birth_month = scanner.nextInt();
         if (birth_month > 12 || birth_month < 1){
             System.out.println("잘못된 값을 입력하셨습니다");
-        return;
+            return;
         }
 
         System.out.println("태어난 일을 입력하세요");
         int birth_day = scanner.nextInt();
         if (birth_day > 31 || birth_day < 1){
             System.out.println("잘못된 값을 입력하셨습니다");
-        return;
+            return;
+        }
+
+        int lastday;
+
+        switch (birth_month) {
+            case 1 : case 3 : case 5: case 7: case 8: case 10 : case 12:
+                lastday = 31;
+                break;
+            case 2:
+                lastday = 29;
+                break;
+            default:
+                lastday = 30;
+                break;
         }
 
         String Cons = "";
+        if (lastday > birth_day) {
+            if (birth_month == 1) {
+                if (birth_day >= 20) {
+                    Cons = "물병";
+                } else
+                    Cons = "염소";
+            }
 
-        if (birth_month == 1) {
-            if (birth_day >= 20) {
-                Cons = "물병";
-            } else
-                Cons = "염소";
+            if (birth_month == 2) {
+                if (birth_day >= 19) {
+                    Cons = "물고기";
+                } else
+                    Cons = "물병";
+            }
+
+            if (birth_month == 3) {
+                if (birth_day >= 21) {
+                    Cons = "양";
+                } else
+                    Cons = "물고기";
+            }
+
+            if (birth_month == 4) {
+                if (birth_day >= 20) {
+                    Cons = "황소";
+                } else
+                    Cons = "양";
+            }
+
+            if (birth_month == 5) {
+                if (birth_day >= 21) {
+                    Cons = "쌍둥이";
+                } else
+                    Cons = "황소";
+            }
+
+            if (birth_month == 6) {
+                if (birth_day >= 22) {
+                    Cons = "게";
+                } else
+                    Cons = "쌍둥이";
+            }
+
+            if (birth_month == 7) {
+                if (birth_day >= 23) {
+                    Cons = "사자";
+                } else
+                    Cons = "게";
+            }
+
+            if (birth_month == 8) {
+                if (birth_day >= 23) {
+                    Cons = "처녀";
+                } else
+                    Cons = "사자";
+            }
+
+            if (birth_month == 9) {
+                if (birth_day >= 24) {
+                    Cons = "천칭";
+                } else
+                    Cons = "처녀";
+            }
+
+            if (birth_month == 10) {
+                if (birth_day >= 23) {
+                    Cons = "전갈";
+                } else
+                    Cons = "천칭";
+            }
+
+
+            if (birth_month == 11) {
+                if (birth_day >= 23) {
+                    Cons = "궁수";
+                } else
+                    Cons = "전갈";
+            }
+
+            if (birth_month == 12) {
+                if (birth_day >= 25) {
+                    Cons = "염소";
+                } else
+                    Cons = "궁수";
+            }
+
+            System.out.println(name + "님의 별자리는 " + Cons + "자리입니다.");
+        } else {
+            System.out.println("잘못된 값을 입력하셨습니다");
+            return;
         }
-
-        if (birth_month == 2) {
-            if (birth_day >= 19) {
-                Cons = "물고기";
-            } else
-                Cons = "물병";
-        }
-
-        if (birth_month == 3) {
-            if (birth_day >= 21) {
-                Cons = "양";
-            } else
-                Cons = "물고기";
-        }
-
-        if (birth_month == 4) {
-            if (birth_day >= 20) {
-                Cons = "황소";
-            } else
-                Cons = "양";
-        }
-
-        if (birth_month == 5) {
-            if (birth_day >= 21) {
-                Cons = "쌍둥이";
-            } else
-                Cons = "황소";
-        }
-
-        if (birth_month == 6) {
-            if (birth_day >= 22) {
-                Cons = "게";
-            } else
-                Cons = "쌍둥이";
-        }
-
-        if (birth_month == 7) {
-            if (birth_day >= 23) {
-                Cons = "사자";
-            } else
-                Cons = "게";
-        }
-
-        if (birth_month == 8) {
-            if (birth_day >= 23) {
-                Cons = "처녀";
-            } else
-                Cons = "사자";
-        }
-
-        if (birth_month == 9) {
-            if (birth_day >= 24) {
-                Cons = "천칭";
-            } else
-                Cons = "처녀";
-        }
-
-        if (birth_month == 10) {
-            if (birth_day >= 23) {
-                Cons = "전갈";
-            } else
-                Cons = "천칭";
-        }
-
-        if (birth_month == 11) {
-            if (birth_day >= 23) {
-                Cons = "궁수";
-            } else
-                Cons = "전갈";
-        }
-
-        if (birth_month == 12) {
-            if (birth_day >= 25) {
-                Cons = "염소";
-            } else
-                Cons = "궁수";
-        }
-
-        System.out.println(name + "님의 별자리는 " + Cons + "자리입니다.");
     }
 }
