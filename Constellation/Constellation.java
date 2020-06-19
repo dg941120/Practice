@@ -48,7 +48,7 @@ class Constellation {
         int birth_day = scanner.nextInt();
         if (birth_day > 31 || birth_day < 1){
             System.out.println("잘못된 값을 입력하셨습니다");
-            return;
+        return;
         }
 
         String Cons = "";
@@ -101,30 +101,35 @@ class Constellation {
             } else
                 Cons = "게";
         }
+
         if (birth_month == 8) {
             if (birth_day >= 23) {
                 Cons = "처녀";
             } else
                 Cons = "사자";
         }
+
         if (birth_month == 9) {
             if (birth_day >= 24) {
                 Cons = "천칭";
             } else
                 Cons = "처녀";
         }
+
         if (birth_month == 10) {
             if (birth_day >= 23) {
                 Cons = "전갈";
             } else
                 Cons = "천칭";
         }
+
         if (birth_month == 11) {
             if (birth_day >= 23) {
                 Cons = "궁수";
             } else
                 Cons = "전갈";
         }
+
         if (birth_month == 12) {
             if (birth_day >= 25) {
                 Cons = "염소";
