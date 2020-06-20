@@ -23,9 +23,6 @@ class TreeHit {
 // https://wikidocs.net/212 해당 사이트의 예제를 내가 원하는 대로 바꾸어 보았다.
 // 원래는 treeHit++ 로 10까지 계속해서 수가 더해지는 것이었으나, if 로 사용자가 원할 때 오르게 바꾸었다.
 
-
-import java.util.Scanner;
-
 class TreeHit_Switch {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
@@ -39,7 +36,7 @@ class TreeHit_Switch {
                     System.out.println("나무를 도끼로 찍었습니다. 지금까지 도끼로 나무를 " + treeHit + "번 찍었습니다.");
                     continue;
                 case "N":
-                    System.out.println("나무를 도끼로 찍지 않았습니다. 지금까지 도끼로 나무를 " + treeHit + "번 찍었습니다.")
+                    System.out.println("나무를 도끼로 찍지 않았습니다. 지금까지 도끼로 나무를 " + treeHit + "번 찍었습니다.");
                 default:
             }
         }

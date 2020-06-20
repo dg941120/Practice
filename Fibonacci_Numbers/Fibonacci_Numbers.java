@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Fib_30 {
     public static void main(String[] args) {
         int arr[] = new int[30]; // 30개의 배열을 만드는 것. 배열은 0 ~ 29가 생성.
@@ -14,9 +16,6 @@ class Fib_30 {
         System.out.println("30번째 항 : " + arr[29]);
     }
 }
-
-
-import java.util.Scanner;
 
 class Fib_New {
     public static void main(String[] args) {
@@ -38,9 +37,6 @@ class Fib_New {
         System.out.println("원하는 항 : " + (arr[input - 1])); // 원하는 항 : arr[0]
     }
 }
-
-
-import java.util.Scanner;
 
 class Fib_Num {
     public static void main(String[] args) {
