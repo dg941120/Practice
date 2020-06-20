@@ -19,7 +19,7 @@
 
 import java.util.Scanner;
 
-class FCEC { // Four columns and eight characters (사주팔자)
+class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔자, 십이지)
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -57,7 +57,8 @@ class FCEC { // Four columns and eight characters (사주팔자)
                         System.out.println("일을 잘못 입력하셨습니다");
                         return;
                     }
-                    // 각 월별 마지막 일수를 초과할 경우에도 return 시키려 했으나, 음력은 매 해마다 월별 끝나는 일수가 달라 주석처리함.
+                    // 각 월별 마지막 일수를 초과할 경우에도 return 시키려 했으나,
+                    음력은 매 해마다 월별 끝나는 일수가 달라 필요가 없어 주석처리함.
                     */
         }
 
@@ -117,7 +118,7 @@ class FCEC { // Four columns and eight characters (사주팔자)
             System.out.println("띠나 십이지를 잘못 입력하셨습니다.");
             return;
         }
-        // ==로 문자값을 받지 못하여 .equals 로 가져와야 했음.
+        // == 로 문자값을 받지 못하여 .equals 로 가져와야 했음.
 
         String ans1 = "천" + mean.substring(yeartoint - 1, yeartoint);
         // 첫번째 사주풀이
@@ -209,6 +210,5 @@ class FCEC { // Four columns and eight characters (사주팔자)
         // 네번째 사주풀이.
 
         System.out.println(name + "님의 사주는 " + ans1 + ", " + ans2 + ", " + ans3 + ", " + ans4 + "입니다.");
-        // 사주풀이 해석은 인터넷 검색결과와 강사님 제공자료가 서로 일치하지 않아 기재하지 않음.
     }
 }
