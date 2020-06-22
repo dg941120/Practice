@@ -127,9 +127,12 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
         // 시작 자리를 포함하기 때문에 - 1.
 
         if (monthmove > 12) {
-            monthmove %= 12;
+            if ((monthmove %= 12) == 0) {
+                monthmove = 12;
+            }
         }
         // 12보다 클 경우 mean 에서 가져올 수가 없다. 그렇기에 12로 나누어 주어 나머지를 가져옴.
+        // 그런데 만약 12의 배수일경우 0값이 나오기때문에 예외처리
 
         String ans2 = "천" + mean.substring(monthmove - 1, monthmove);
         // 두번째 사주풀이
@@ -137,9 +140,12 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
         int daymove = (monthmove - 1) + day;
 
         if (daymove > 12) {
-            daymove %= 12;
+            if ((daymove %= 12) == 0) {
+                daymove = 12;
+            }
         }
         // 위와 동일.
+
 
         String ans3 = "천" + mean.substring(daymove - 1, daymove);
         // 세번째 사주풀이
@@ -203,7 +209,9 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
         // 이렇게 되면 세번째 풀이가 끝난 부분을 '자' 로 치환하여 두번째랑 세번째 사주풀이처럼 시작할 수 있다.
 
         if (hdmove > 12) {
-            hdmove %= 12;
+            if ((hdmove %= 12) == 0) {
+                hdmove = 12;
+            }
         }
 
         String ans4 = "천" + mean.substring(hdmove - 1, hdmove);
