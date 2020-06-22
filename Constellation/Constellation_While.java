@@ -82,6 +82,7 @@ class Constellation_While {
         }
 
         String Cons = "";
+
         while (true) {
             if (lastday < birth_day) {
                 System.out.println("잘못 입력하셨습니다.");
