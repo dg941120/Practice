@@ -130,8 +130,8 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
             if ((monthmove %= 12) == 0) {
                 monthmove = 12;
             } else {
-				monthmove %= 12;
-			}
+                monthmove %= 12;
+            }
         }
         // 12보다 클 경우 mean 에서 가져올 수가 없다. 그렇기에 12로 나누어 주어 나머지를 가져옴.
         // 그런데 만약 12의 배수일경우 0값이 나오기때문에 예외처리
@@ -145,8 +145,8 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
             if ((daymove %= 12) == 0) {
                 daymove = 12;
             } else {
-				daymove %= 12;
-			}
+                daymove %= 12;
+            }
         }
         // 위와 동일.
 
@@ -216,8 +216,8 @@ class FCEC_CZ { // Four columns and eight characters_Chinese Zodiac (사주팔�
             if ((hdmove %= 12) == 0) {
                 hdmove = 12;
             } else {
-				hdmove %= 12;
-			}
+                hdmove %= 12;
+            }
         }
 
         String ans4 = "천" + mean.substring(hdmove - 1, hdmove);
