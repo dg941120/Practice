@@ -7,4 +7,7 @@
 <br>Version 0.2<br>
 0.1 때 올린 원래버전은 구별을 위해 FCEC_CZ 로 이름 변경을 했고, 
 새로운 방식은 사용자에게 생년을 받아 띠까지 계산하여 출력하게 만들었다.
+<br>Version 0.3<br>
+기존 FCEC_Year 가 FCEC_Year_Over1900 로 이름을 변경했고,
+1900년생 이전도 검색 가능하게 만든 것을 FCEC_Year 로 재배치했다. 
 </pre>

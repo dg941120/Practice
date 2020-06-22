@@ -20,7 +20,7 @@
 import java.util.Calendar;
 import java.util.Scanner;
 
-class FCEC_Year { // Four columns and eight characters (사주팔자, 생년)
+class FCEC_Year_Over1900 { // Four columns and eight characters (사주팔자, 생년, 1900년생 이상만)
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Calendar cal = Calendar.getInstance();
@@ -29,6 +29,7 @@ class FCEC_Year { // Four columns and eight characters (사주팔자, 생년)
         String name = scanner.next();
 
         System.out.println("자신이 태어난 년도를 입력해주세요.");
+        System.out.println("※ 1900년생 이후부터 가능합니다.");
         int year = scanner.nextInt();
 
         System.out.println("자신이 태어난 월을 음력으로 입력해주세요.");
@@ -76,55 +77,23 @@ class FCEC_Year { // Four columns and eight characters (사주팔자, 생년)
 
         int today = cal.get(Calendar.YEAR);
         final String mean = "귀액권파인문복고역간수명";
-        // 사주풀이용 String, .substring 으로 가져오기 위한 String 임.
+        // 풀이로써, .substring 으로 가져오기 위한 String 임.
 
-        int tempyear;
-        if (year <= 0 || today < year) {
+        if (year == 1900) {
+            year = 1;
+        } else if (year >= 1900 || today >= year) {
+            year = year - 1888;
+            for (int i = 12; i < year; ) {
+                year -= 12;
+            }
+            year = year + 1;
+        } else {
             System.out.println("생년을 잘못 입력하셨습니다.");
             return;
-        } else {
-            tempyear = year % 12;
-            switch (tempyear) {
-                case 1:
-                    year = 10;
-                    break;
-                case 2:
-                    year = 11;
-                    break;
-                case 3:
-                    year = 12;
-                    break;
-                case 4:
-                    year = 1;
-                    break;
-                case 5:
-                    year = 2;
-                    break;
-                case 6:
-                    year = 3;
-                    break;
-                case 7:
-                    year = 4;
-                    break;
-                case 8:
-                    year = 5;
-                    break;
-                case 9:
-                    year = 6;
-                    break;
-                case 10:
-                    year = 7;
-                    break;
-                case 11:
-                    year = 8;
-                    break;
-                case 0:
-                    year = 9;
-            }
         }
-        // 생년을 12 로 나누어 나머지 값을 받은 후 밑의 if 문에서 대응할 값을 입력하도록 만들었다. 
+        // 생년으로 가능하도록 만들었다.
 
-        String animal;
+        String animal = "";
 
         if (year == 1) {
             animal = "쥐";
@@ -159,10 +128,10 @@ class FCEC_Year { // Four columns and eight characters (사주팔자, 생년)
         } else if (year == 11) {
             animal = "개";
 
-        } else {
+        } else if (year == 12) {
             animal = "돼지";
         }
-        // 마지막에 알려줄 자신의 띠를 위한 if 문.
+        // 마지막에 알려줄 자신의 띠를 위한 if 문
 
         String ans1 = "천" + mean.substring(year - 1, year);
         // 첫번째 사주풀이
