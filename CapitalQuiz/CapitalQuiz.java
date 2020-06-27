@@ -1,4 +1,6 @@
-class Programming2 {
+import java.util.Scanner;
+
+class CapitalQuiz {
 
     public static String Questions(int a) {
         String[] Q = new String[10];
