@@ -26,22 +26,20 @@ class CapitalQuiz {
         return OX;
     }
 
-    public static int correctAnswers(int[] userAnswer) {
-        int[] trueAnwser = {2, 0, 2, 3, 0, 1, 3, 2, 1, 2};
+    public static int correctAnswers(int[] userAnswer, int[] trueAnswer) {
         int CAnum = 0;
         for (int i = 0; i < userAnswer.length; i++) {
-            if (userAnswer[i] == trueAnwser[i]) {
+            if (userAnswer[i] == trueAnswer[i]) {
                 CAnum++;
             }
         }
         return CAnum;
     }
 
-    public static int incorrectAnswers(int[] userAnswer) {
-        int[] trueAnwser = {2, 0, 2, 3, 0, 1, 3, 2, 1, 2};
+    public static int incorrectAnswers(int[] userAnswer, int[] trueAnswer) {
         int iCAnum = 0;
         for (int i = 0; i < userAnswer.length; i++) {
-            if (userAnswer[i] != trueAnwser[i]) {
+            if (userAnswer[i] != trueAnswer[i]) {
                 iCAnum++;
             }
         }
@@ -50,7 +48,8 @@ class CapitalQuiz {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int[] userAnwser = new int[10];
+        int[] trueAnswer = {2, 0, 2, 3, 0, 1, 3, 2, 1, 2};
+        int[] userAnswer = new int[10];
         for (int i = 0; i < 10; i++) {
             System.out.println(Questions(i));
             System.out.println();
@@ -58,15 +57,16 @@ class CapitalQuiz {
             System.out.println("a, b, c, d 로 입력해야합니다.");
             String userInput = scanner.next();
             System.out.println();
+            userInput = userInput.toLowerCase();
 
             if (userInput.equals("a")) {
-                userAnwser[i] = 0;
+                userAnswer[i] = 0;
             } else if (userInput.equals("b")) {
-                userAnwser[i] = 1;
+                userAnswer[i] = 1;
             } else if (userInput.equals("c")) {
-                userAnwser[i] = 2;
+                userAnswer[i] = 2;
             } else if (userInput.equals("d")) {
-                userAnwser[i] = 3;
+                userAnswer[i] = 3;
             } else {
                 System.out.println("잘못된 형식을 입력하셨습니다.");
                 i--;
@@ -74,12 +74,12 @@ class CapitalQuiz {
             }
 
         }
-        if (isPassed(correctAnswers(userAnwser)) == true) {
+        if (isPassed(correctAnswers(userAnswer,trueAnswer)) == true) {
             System.out.println("합격입니다!");
         } else {
             System.out.println("불합격입니다...");
         }
-        System.out.println("정답 횟수 : " + correctAnswers(userAnwser));
-        System.out.println("오답 횟수 : " + incorrectAnswers(userAnwser));
+        System.out.println("정답 횟수 : " + correctAnswers(userAnswer,trueAnswer));
+        System.out.println("오답 횟수 : " + incorrectAnswers(userAnswer,trueAnswer));
     }
 }
