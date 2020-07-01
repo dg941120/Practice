@@ -1,4 +1,5 @@
-# RPS (Rock Paper Scissors)
+## RPS
+(Rock Paper Scissors, 가위바위보 게임)
 <pre>Version 0.1<br>
 랜덤 기능과 while, if 문을 통해 간단한 가위바위보 게임을 만들었다.
 <br>Version 0.2<br>
