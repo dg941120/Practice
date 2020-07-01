@@ -1,4 +1,5 @@
-# FCEC (Four columns and eight characters (사주팔자))
+## FCEC 
+(Four columns and eight characters (사주팔자))
 <pre>Version 0.1<br>
 사용자의 이름과 생년월일을 입력값으로 받아 특정 규칙을 이용해 사용자의 사주팔자를 알려주는 프로그램.
 중간에 '==' 이 안먹히고 '.equals' 를 사용해야 한다는 걸 알게되었고, 
