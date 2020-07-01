@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-class ResidentRegistrationNumber {
+class ResidentRegistrationNumber2 {
     private String RRN;
 
     public String getRRN() {

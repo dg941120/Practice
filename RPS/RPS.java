@@ -1,3 +1,6 @@
+import java.util.Scanner;
+import java.util.Random;
+
 class RPS /* RockPaperScissors */ {
     public static void main(String[] args) {
         String[] rps = {"가위", "바위", "보"};

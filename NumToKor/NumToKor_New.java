@@ -7,25 +7,25 @@ class NumToKor_New {
         Scanner scanner = new Scanner(System.in);
         System.out.println("0 ~ 99 사이의 숫자를 입력하세요");
         int num = scanner.nextInt();
-        String strnum = "영일이삼사오육칠팔구", fwrdtot = "", backtot = "";
+        String strNum = "영일이삼사오육칠팔구", forwardTot = "", backTot = "";
 
-        int fwrdnum, backnum;
+        int forwardNum, backnum;
 
         if (num >= 100 || num < 0) {
             System.out.println("잘못된 값입니다.");
             return;
         }
 
-        fwrdnum = num / 10;
+        forwardNum = num / 10;
         backnum = num % 10;
 
-        fwrdtot = strnum.substring(fwrdnum, fwrdnum + 1);
-        backtot = strnum.substring(backnum, backnum + 1);
-        if (fwrdnum == 1) {
-            System.out.println("십" + backtot);
-        } else if (fwrdnum != 0) {
-            System.out.println(fwrdtot + "십" + backtot);
+        forwardTot = strNum.substring(forwardNum, forwardNum + 1);
+        backTot = strNum.substring(backnum, backnum + 1);
+        if (forwardNum == 1) {
+            System.out.println("십" + backTot);
+        } else if (forwardNum != 0) {
+            System.out.println(forwardTot + "십" + backTot);
         } else
-            System.out.println(backtot);
+            System.out.println(backTot);
     }
 }

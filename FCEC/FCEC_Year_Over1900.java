@@ -136,103 +136,103 @@ class FCEC_Year_Over1900 { // Four columns and eight characters (사주팔자, �
         String ans1 = "천" + mean.substring(year - 1, year);
         // 첫번째 사주풀이
 
-        int monthmove = (year - 1) + month;
+        int monthMove = (year - 1) + month;
         // 시작 자리를 포함하기 때문에 - 1.
 
-        if (monthmove > 12) {
-            if ((monthmove %= 12) == 0) {
-                monthmove = 12;
+        if (monthMove > 12) {
+            if ((monthMove %= 12) == 0) {
+                monthMove = 12;
             } else {
-                monthmove %= 12;
+                monthMove %= 12;
             }
         }
         // 12보다 클 경우 mean 에서 가져올 수가 없다. 그렇기에 12로 나누어 주어 나머지를 가져옴.
         // 그런데 만약 12의 배수일경우 0값이 나오기때문에 예외처리
 
-        String ans2 = "천" + mean.substring(monthmove - 1, monthmove);
+        String ans2 = "천" + mean.substring(monthMove - 1, monthMove);
         // 두번째 사주풀이
 
-        int daymove = (monthmove - 1) + day;
+        int dayMove = (monthMove - 1) + day;
 
-        if (daymove > 12) {
-            if ((daymove %= 12) == 0) {
-                daymove = 12;
+        if (dayMove > 12) {
+            if ((dayMove %= 12) == 0) {
+                dayMove = 12;
             } else {
-                daymove %= 12;
+                dayMove %= 12;
             }
         }
         // 위와 동일.
 
-        String ans3 = "천" + mean.substring(daymove - 1, daymove);
+        String ans3 = "천" + mean.substring(dayMove - 1, dayMove);
         // 세번째 사주풀이
 
-        int hourmove = 0;
+        int hourMove = 0;
 
         switch (hour) {
             case 23:
             case 0:
-                hourmove = 1;
+                hourMove = 1;
                 break;
             case 1:
             case 2:
-                hourmove = 2;
+                hourMove = 2;
                 break;
             case 3:
             case 4:
-                hourmove = 3;
+                hourMove = 3;
                 break;
             case 5:
             case 6:
-                hourmove = 4;
+                hourMove = 4;
                 break;
             case 7:
             case 8:
-                hourmove = 5;
+                hourMove = 5;
                 break;
             case 9:
             case 10:
-                hourmove = 6;
+                hourMove = 6;
                 break;
             case 11:
             case 12:
-                hourmove = 7;
+                hourMove = 7;
                 break;
             case 13:
             case 14:
-                hourmove = 8;
+                hourMove = 8;
                 break;
             case 15:
             case 16:
-                hourmove = 9;
+                hourMove = 9;
                 break;
             case 17:
             case 18:
-                hourmove = 10;
+                hourMove = 10;
                 break;
             case 19:
             case 20:
-                hourmove = 11;
+                hourMove = 11;
                 break;
             case 21:
             case 22:
-                hourmove = 12;
+                hourMove = 12;
                 break;
         }
         // switch 문으로 입력한 시간을 그에 대응하는 십이지 값으로 바꿈.
 
-        int hdmove = (hourmove - 1) + daymove;
+        int hdMove = (hourMove - 1) + dayMove;
         // - 1 은 초기값을 0으로 두는 바람에 case 문에서 1부터 시작해서 넣어줌.
         // 이렇게 되면 세번째 풀이가 끝난 부분을 '자' 로 치환하여 두번째랑 세번째 사주풀이처럼 시작할 수 있다.
 
-        if (hdmove > 12) {
-            if ((hdmove %= 12) == 0) {
-                hdmove = 12;
+        if (hdMove > 12) {
+            if ((hdMove %= 12) == 0) {
+                hdMove = 12;
             } else {
-                hdmove %= 12;
+                hdMove %= 12;
             }
         }
 
-        String ans4 = "천" + mean.substring(hdmove - 1, hdmove);
+        String ans4 = "천" + mean.substring(hdMove - 1, hdMove);
         // 네번째 사주풀이.
 
         System.out.println(animal + "띠인 " + name + "님의 사주는 " + ans1 + ", " + ans2 + ", " + ans3 + ", " + ans4 + "입니다.");

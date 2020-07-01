@@ -8,60 +8,60 @@ class NumToKor {
         System.out.println("0~99 사이의 숫자를 입력하세요");
         int num = scanner.nextInt();
         String zero = "영", one = "일", two = "이", three = "삼", four = "사", five = "오",
-                six = "육", seven = "칠", eight = "팔", nine = "구", ten = "십", fowardtot = "", backtot = "";
+                six = "육", seven = "칠", eight = "팔", nine = "구", ten = "십", forwardTot = "", backTot = "";
 
-        int forwardnum, backnum;
+        int forwardNum, backNum;
 
         if (num >= 100 || num < 0) {
             System.out.println("잘못된 값입니다.");
             return;
         }
 
-        forwardnum = num / 10;
-        backnum = num % 10;
+        forwardNum = num / 10;
+        backNum = num % 10;
 
-        if (forwardnum == 0) {
-        } else if (forwardnum == 1) {
-            fowardtot = ten;
-        } else if (forwardnum == 2) {
-            fowardtot = two + ten;
-        } else if (forwardnum == 3) {
-            fowardtot = three + ten;
-        } else if (forwardnum == 4) {
-            fowardtot = four + ten;
-        } else if (forwardnum == 5) {
-            fowardtot = five + ten;
-        } else if (forwardnum == 6) {
-            fowardtot = six + ten;
-        } else if (forwardnum == 7) {
-            fowardtot = seven + ten;
-        } else if (forwardnum == 8) {
-            fowardtot = eight + ten;
-        } else if (forwardnum == 9)
-            fowardtot = nine + ten;
+        if (forwardNum == 0) {
+        } else if (forwardNum == 1) {
+            forwardTot = ten;
+        } else if (forwardNum == 2) {
+            forwardTot = two + ten;
+        } else if (forwardNum == 3) {
+            forwardTot = three + ten;
+        } else if (forwardNum == 4) {
+            forwardTot = four + ten;
+        } else if (forwardNum == 5) {
+            forwardTot = five + ten;
+        } else if (forwardNum == 6) {
+            forwardTot = six + ten;
+        } else if (forwardNum == 7) {
+            forwardTot = seven + ten;
+        } else if (forwardNum == 8) {
+            forwardTot = eight + ten;
+        } else if (forwardNum == 9)
+            forwardTot = nine + ten;
 
 
-        if( forwardnum == 0 && backnum == 0 ) {
-            backtot = zero;
-        } else if ( backnum == 1 ) {
-            backtot = one;
-        } else if ( backnum == 2) {
-            backtot = two;
-        } else if ( backnum == 3) {
-            backtot = three;
-        } else if ( backnum == 4) {
-            backtot = four;
-        } else if ( backnum == 5) {
-            backtot = five;
-        } else if ( backnum == 6) {
-            backtot = six;
-        } else if ( backnum == 7) {
-            backtot = seven;
-        } else if ( backnum == 8) {
-            backtot = eight;
-        } else if ( backnum == 9)
-            backtot = nine;
+        if( forwardNum == 0 && backNum == 0 ) {
+            backTot = zero;
+        } else if ( backNum == 1 ) {
+            backTot = one;
+        } else if ( backNum == 2) {
+            backTot = two;
+        } else if ( backNum == 3) {
+            backTot = three;
+        } else if ( backNum == 4) {
+            backTot = four;
+        } else if ( backNum == 5) {
+            backTot = five;
+        } else if ( backNum == 6) {
+            backTot = six;
+        } else if ( backNum == 7) {
+            backTot = seven;
+        } else if ( backNum == 8) {
+            backTot = eight;
+        } else if ( backNum == 9)
+            backTot = nine;
 
-        System.out.println(fowardtot + backtot);
+        System.out.println(forwardTot + backTot);
     }
 }

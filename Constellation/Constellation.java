@@ -51,111 +51,110 @@ class Constellation {
             return;
         }
 
-        int lastday;
+        int lastDay;
 
         switch (birth_month) {
             case 1 : case 3 : case 5: case 7: case 8: case 10 : case 12:
-                lastday = 31;
+                lastDay = 31;
                 break;
             case 2:
-                lastday = 29;
+                lastDay = 29;
                 break;
             default:
-                lastday = 30;
+                lastDay = 30;
                 break;
         }
 
-        String Cons = "";
-        if (lastday > birth_day) {
+        String cons = "";
+        if (lastDay > birth_day) {
             if (birth_month == 1) {
                 if (birth_day >= 20) {
-                    Cons = "물병";
+                    cons = "물병";
                 } else
-                    Cons = "염소";
+                    cons = "염소";
             }
 
             if (birth_month == 2) {
                 if (birth_day >= 19) {
-                    Cons = "물고기";
+                    cons = "물고기";
                 } else
-                    Cons = "물병";
+                    cons = "물병";
             }
 
             if (birth_month == 3) {
                 if (birth_day >= 21) {
-                    Cons = "양";
+                    cons = "양";
                 } else
-                    Cons = "물고기";
+                    cons = "물고기";
             }
 
             if (birth_month == 4) {
                 if (birth_day >= 20) {
-                    Cons = "황소";
+                    cons = "황소";
                 } else
-                    Cons = "양";
+                    cons = "양";
             }
 
             if (birth_month == 5) {
                 if (birth_day >= 21) {
-                    Cons = "쌍둥이";
+                    cons = "쌍둥이";
                 } else
-                    Cons = "황소";
+                    cons = "황소";
             }
 
             if (birth_month == 6) {
                 if (birth_day >= 22) {
-                    Cons = "게";
+                    cons = "게";
                 } else
-                    Cons = "쌍둥이";
+                    cons = "쌍둥이";
             }
 
             if (birth_month == 7) {
                 if (birth_day >= 23) {
-                    Cons = "사자";
+                    cons = "사자";
                 } else
-                    Cons = "게";
+                    cons = "게";
             }
 
             if (birth_month == 8) {
                 if (birth_day >= 23) {
-                    Cons = "처녀";
+                    cons = "처녀";
                 } else
-                    Cons = "사자";
+                    cons = "사자";
             }
 
             if (birth_month == 9) {
                 if (birth_day >= 24) {
-                    Cons = "천칭";
+                    cons = "천칭";
                 } else
-                    Cons = "처녀";
+                    cons = "처녀";
             }
 
             if (birth_month == 10) {
                 if (birth_day >= 23) {
-                    Cons = "전갈";
+                    cons = "전갈";
                 } else
-                    Cons = "천칭";
+                    cons = "천칭";
             }
 
 
             if (birth_month == 11) {
                 if (birth_day >= 23) {
-                    Cons = "궁수";
+                    cons = "궁수";
                 } else
-                    Cons = "전갈";
+                    cons = "전갈";
             }
 
             if (birth_month == 12) {
                 if (birth_day >= 25) {
-                    Cons = "염소";
+                    cons = "염소";
                 } else
-                    Cons = "궁수";
+                    cons = "궁수";
             }
 
-            System.out.println(name + "님의 별자리는 " + Cons + "자리입니다.");
+            System.out.println(name + "님의 별자리는 " + cons + "자리입니다.");
         } else {
             System.out.println("잘못된 값을 입력하셨습니다");
-            return;
         }
     }
 }

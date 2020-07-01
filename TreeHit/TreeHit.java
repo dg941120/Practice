@@ -6,8 +6,8 @@ class TreeHit {
         int treeHit = 0;
         while (treeHit < 10) {
             System.out.println("나무를 도끼로 찍으시겠습니까? Y/N");
-            String yorn = scan.next();
-            if (yorn.equals("Y")) { treeHit++;
+            String YorN = scan.next();
+            if (YorN.equals("Y")) { treeHit++;
             // treeHit + 1 이 적용이 안 됐다. while 문이라 그런거 같다.
                 System.out.println("나무를 도끼로 " + treeHit + "번 찍었습니다.");
             } else {

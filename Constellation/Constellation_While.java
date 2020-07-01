@@ -37,11 +37,11 @@ class Constellation_While {
         System.out.println("이름을 입력하세요.");
         String name = scanner.next();
 
-        int birth_month;
+        int birthMonth;
         while (true) {
             System.out.println("태어난 월을 입력하세요.");
-            birth_month = scanner.nextInt();
-            if (birth_month <= 12 & birth_month >= 1) {
+            birthMonth = scanner.nextInt();
+            if (birthMonth <= 12 & birthMonth >= 1) {
                 break;
             } else {
                 System.out.println("잘못 입력하셨습니다.");
@@ -49,11 +49,11 @@ class Constellation_While {
             }
         }
 
-        int birth_day;
+        int birthDay;
         while (true) {
             System.out.println("태어난 일을 입력하세요.");
-            birth_day = scanner.nextInt();
-            if (birth_day <= 31 & birth_day >= 1) {
+            birthDay = scanner.nextInt();
+            if (birthDay <= 31 & birthDay >= 1) {
                 break;
             } else {
                 System.out.println("잘못 입력하셨습니다.");
@@ -61,9 +61,9 @@ class Constellation_While {
             }
         }
 
-        int lastday;
+        int lastDay;
 
-        switch (birth_month) {
+        switch (birthMonth) {
             case 1:
             case 3:
             case 5:
@@ -71,110 +71,110 @@ class Constellation_While {
             case 8:
             case 10:
             case 12:
-                lastday = 31;
+                lastDay = 31;
                 break;
             case 2:
-                lastday = 29;
+                lastDay = 29;
                 break;
             default:
-                lastday = 30;
+                lastDay = 30;
                 break;
         }
 
-        String Cons = "";
+        String cons = "";
 
         while (true) {
-            if (lastday < birth_day) {
+            if (lastDay < birthDay) {
                 System.out.println("잘못 입력하셨습니다.");
-                System.out.println(birth_month + "월은 " + birth_day + "일이 존재하지 않습니다.");
+                System.out.println(birthMonth + "월은 " + birthDay + "일이 존재하지 않습니다.");
                 System.out.println("태어난 일을 입력하세요.");
-                birth_day = scanner.nextInt();
+                birthDay = scanner.nextInt();
             } else {
-                if (birth_month == 1) {
-                    if (birth_day >= 20) {
-                        Cons = "물병";
+                if (birthMonth == 1) {
+                    if (birthDay >= 20) {
+                        cons = "물병";
                     } else
-                        Cons = "염소";
+                        cons = "염소";
                 }
 
-                if (birth_month == 2) {
-                    if (birth_day >= 19) {
-                        Cons = "물고기";
+                if (birthMonth == 2) {
+                    if (birthDay >= 19) {
+                        cons = "물고기";
                     } else
-                        Cons = "물병";
+                        cons = "물병";
                 }
 
-                if (birth_month == 3) {
-                    if (birth_day >= 21) {
-                        Cons = "양";
+                if (birthMonth == 3) {
+                    if (birthDay >= 21) {
+                        cons = "양";
                     } else
-                        Cons = "물고기";
+                        cons = "물고기";
                 }
 
-                if (birth_month == 4) {
-                    if (birth_day >= 20) {
-                        Cons = "황소";
+                if (birthMonth == 4) {
+                    if (birthDay >= 20) {
+                        cons = "황소";
                     } else
-                        Cons = "양";
+                        cons = "양";
                 }
 
-                if (birth_month == 5) {
-                    if (birth_day >= 21) {
-                        Cons = "쌍둥이";
+                if (birthMonth == 5) {
+                    if (birthDay >= 21) {
+                        cons = "쌍둥이";
                     } else
-                        Cons = "황소";
+                        cons = "황소";
                 }
 
-                if (birth_month == 6) {
-                    if (birth_day >= 22) {
-                        Cons = "게";
+                if (birthMonth == 6) {
+                    if (birthDay >= 22) {
+                        cons = "게";
                     } else
-                        Cons = "쌍둥이";
+                        cons = "쌍둥이";
                 }
 
-                if (birth_month == 7) {
-                    if (birth_day >= 23) {
-                        Cons = "사자";
+                if (birthMonth == 7) {
+                    if (birthDay >= 23) {
+                        cons = "사자";
                     } else
-                        Cons = "게";
+                        cons = "게";
                 }
 
-                if (birth_month == 8) {
-                    if (birth_day >= 23) {
-                        Cons = "처녀";
+                if (birthMonth == 8) {
+                    if (birthDay >= 23) {
+                        cons = "처녀";
                     } else
-                        Cons = "사자";
+                        cons = "사자";
                 }
 
-                if (birth_month == 9) {
-                    if (birth_day >= 24) {
-                        Cons = "천칭";
+                if (birthMonth == 9) {
+                    if (birthDay >= 24) {
+                        cons = "천칭";
                     } else
-                        Cons = "처녀";
+                        cons = "처녀";
                 }
 
-                if (birth_month == 10) {
-                    if (birth_day >= 23) {
-                        Cons = "전갈";
+                if (birthMonth == 10) {
+                    if (birthDay >= 23) {
+                        cons = "전갈";
                     } else
-                        Cons = "천칭";
+                        cons = "천칭";
                 }
 
-                if (birth_month == 11) {
-                    if (birth_day >= 23) {
-                        Cons = "궁수";
+                if (birthMonth == 11) {
+                    if (birthDay >= 23) {
+                        cons = "궁수";
                     } else
-                        Cons = "전갈";
+                        cons = "전갈";
                 }
 
-                if (birth_month == 12) {
-                    if (birth_day >= 25) {
-                        Cons = "염소";
+                if (birthMonth == 12) {
+                    if (birthDay >= 25) {
+                        cons = "염소";
                     } else
-                        Cons = "궁수";
+                        cons = "궁수";
                 }
 
-                System.out.println(name + "님의 별자리는 " + Cons + "자리입니다.");
+                System.out.println(name + "님의 별자리는 " + cons + "자리입니다.");
                 break;
             }
         }

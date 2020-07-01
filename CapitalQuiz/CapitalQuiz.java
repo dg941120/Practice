@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 class CapitalQuiz {
 
-    public static String Questions(int a) {
+    public static String questions(int a) {
         String[] Q = new String[10];
 
         Q[0] = "① 문제 : 캐나다의 수도는?\n   (a) 밴쿠버 (b) 토론토 (c) 오타와 (d) 재스퍼";
@@ -18,32 +18,32 @@ class CapitalQuiz {
         return Q[a];
     }
 
-    public static boolean isPassed(int CAnum) {
+    public static boolean isPassed(int caNum) {
         boolean OX = true;
-        if (CAnum < 7) {
+        if (caNum < 7) {
             OX = false;
         }
         return OX;
     }
 
     public static int correctAnswers(int[] userAnswer, int[] trueAnswer) {
-        int CAnum = 0;
+        int caNum = 0;
         for (int i = 0; i < userAnswer.length; i++) {
             if (userAnswer[i] == trueAnswer[i]) {
-                CAnum++;
+                caNum++;
             }
         }
-        return CAnum;
+        return caNum;
     }
 
     public static int incorrectAnswers(int[] userAnswer, int[] trueAnswer) {
-        int iCAnum = 0;
+        int icaNum = 0;
         for (int i = 0; i < userAnswer.length; i++) {
             if (userAnswer[i] != trueAnswer[i]) {
-                iCAnum++;
+                icaNum++;
             }
         }
-        return iCAnum;
+        return icaNum;
     }
 
     public static void main(String[] args) {
@@ -51,7 +51,7 @@ class CapitalQuiz {
         int[] trueAnswer = {2, 0, 2, 3, 0, 1, 3, 2, 1, 2};
         int[] userAnswer = new int[10];
         for (int i = 0; i < 10; i++) {
-            System.out.println(Questions(i));
+            System.out.println(questions(i));
             System.out.println();
             System.out.println("정답을 입력해주세요.");
             System.out.println("a, b, c, d 로 입력해야합니다.");
@@ -70,11 +70,10 @@ class CapitalQuiz {
             } else {
                 System.out.println("잘못된 형식을 입력하셨습니다.");
                 i--;
-                continue;
             }
 
         }
-        if (isPassed(correctAnswers(userAnswer,trueAnswer)) == true) {
+        if (isPassed(correctAnswers(userAnswer,trueAnswer))) {
             System.out.println("합격입니다!");
         } else {
             System.out.println("불합격입니다...");
