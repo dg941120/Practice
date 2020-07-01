@@ -45,9 +45,7 @@ class ResidentRegistrationNumber {
         for (int i = 0; i < temp.length; i++) {
             temp[i] = RRN.charAt(i);
             temp2[i] = String.valueOf(temp[i]);
-            if (temp2[i].equals("-")) {
-                continue;
-            } else {
+            if (!temp2[i].equals("-")) {
                 nums[i] = Integer.parseInt(temp2[i]);
             }
         }
